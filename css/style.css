@@ -502,6 +502,10 @@ body{
     max-width: 300px;
     max-height: 380px;
 }
+.nauka{
+    max-width: 310px;
+    max-height: 450px;
+}
 .works__img{
     display: block;
     margin: 0 auto;
