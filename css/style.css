@@ -322,11 +322,15 @@ html {
 .header__lg {
   position: absolute;
   bottom: 8%;
-  margin-left: 1.25rem
+  margin-left: 1.25rem;
+  display: flex;
+  -webkit-column-gap: .5rem;
+  -moz-column-gap: .5rem;
+  column-gap: .5rem
 }
 .header__lg-button {
   font-family: Raleway;
-  font-weight: 400;
+  font-weight: 300;
   transition: -webkit-transform ease .3s;
   transition: transform ease .3s;
   transition: transform ease .3s,-webkit-transform ease .3s;
@@ -359,7 +363,7 @@ html {
 .header .menu__icon-text {
   position: absolute;
   top: -3%;
-  right: -100%
+  right: -110%
 }
 .menu-open .header .menu__icon-text {
   color: #2b2928
@@ -399,7 +403,12 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: end;
   row-gap: .625rem
+}
+.header .menu__social-item svg {
+  width: 1.5625rem;
+  height: 1.5625rem
 }
 .header .menu__social-link {
   transition: -webkit-transform ease .3s;
@@ -421,12 +430,12 @@ html {
   height: .125rem;
   background-color: #2b2928;
   top: 0;
-  width: 90%
+  width: 100%
 }
 .header .icon-menu-span {
   display: block;
   height: .125rem;
-  width: 90%;
+  width: 100%;
   background-color: #2b2928
 }
 .menu-open .header .icon-menu-span {
@@ -482,7 +491,7 @@ html {
   justify-content: end
 }
 .footer__nav-item:not(:last-child) {
-  margin-bottom: .625rem
+  margin-bottom: .9375rem
 }
 .footer__nav-link {
   font-family: Raleway;
@@ -492,13 +501,16 @@ html {
 .footer__social {
   display: flex;
   flex-direction: column;
-  row-gap: .5625rem;
   align-items: center
 }
 .footer__social-link {
   transition: -webkit-transform ease .3s;
   transition: transform ease .3s;
   transition: transform ease .3s,-webkit-transform ease .3s
+}
+.footer__social-item svg {
+  width: 1.5625rem;
+  height: 1.5625rem
 }
 .footer__copy-text {
   font-family: Raleway;
@@ -563,7 +575,8 @@ html {
 }
 .hero__text p {
   font-family: Raleway;
-  font-weight: 400
+  font-weight: 400;
+  line-height: 1.2
 }
 .hero__button {
   font-family: Raleway;
@@ -1733,7 +1746,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     column-gap: 5.3125rem
   }
   .footer__nav-link {
-    font-size: 1.125rem
+    font-size: 1.25rem
+  }
+  .footer__social {
+    row-gap: .625rem
   }
   .footer__copy-text {
     font-size: 1rem
@@ -1748,10 +1764,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     margin-right: 10.625rem
   }
   .hero__text {
-    max-width: 30rem
+    max-width: 25rem
   }
   .hero__text p {
-    font-size: 1.25rem
+    font-size: 1rem
   }
   .hero__button {
     font-size: 1.25rem
@@ -1997,7 +2013,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     height: 5rem
   }
   .button__link {
-    font-size: 1rem
+    font-size: .875rem
   }
   .button__link-white {
     font-size: .875rem
@@ -2018,10 +2034,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 1.125rem
   }
   .header .menu__list {
-    row-gap: .625rem
+    row-gap: 1.875rem
   }
   .header .menu__link {
-    font-size: 1rem
+    font-size: 1.25rem
   }
   .header .menu__body::before {
     height: 4.375rem
@@ -2036,18 +2052,21 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding-top: 1.875rem
   }
   .footer__stroke:not(:last-child) {
-    margin-bottom: 1.875rem
+    margin-bottom: 2.5rem
   }
   .footer__container {
     padding-bottom: .625rem
   }
   .footer__body {
-    -webkit-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-    column-gap: 1.25rem
+    -webkit-column-gap: 2.5rem;
+    -moz-column-gap: 2.5rem;
+    column-gap: 2.5rem
   }
   .footer__nav-link {
-    font-size: 1rem
+    font-size: 1.125rem
+  }
+  .footer__social {
+    row-gap: .5rem
   }
   .footer__copy-text {
     font-size: .875rem
@@ -2062,10 +2081,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     margin-right: 3.75rem
   }
   .hero__text {
-    max-width: 18.75rem
+    max-width: 15.625rem
   }
   .hero__text p {
-    font-size: 1rem
+    font-size: .875rem
   }
   .hero__button {
     font-size: 1.125rem
@@ -2152,7 +2171,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: .875rem
   }
   .services__descr p {
-    font-size: .875rem
+    font-size: .75rem
   }
   .education {
     padding-top: 1.5625rem
@@ -2273,13 +2292,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 @media (max-width:61.99875em) {
-  .header .menu__social {
-    flex-direction: row;
-    -webkit-column-gap: .625rem;
-    -moz-column-gap: .625rem;
-    column-gap: .625rem;
-    align-items: flex-end
-  }
   .pros__wrapper {
     -webkit-column-gap: .3125rem;
     -moz-column-gap: .3125rem;
@@ -2314,8 +2326,21 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .header__lg-button {
     color: #dad1c2
   }
+  .menu-open .header__logo-text {
+    color: #2b2928
+  }
   .header .menu__icon-text {
     color: #dad1c2
+  }
+  .menu-open .header .menu__body {
+    width: 100%
+  }
+  .menu-open .header .menu__body::before {
+    width: 100%
+  }
+  .header .menu__social-item svg {
+    width: 1.875rem;
+    height: 1.875rem
   }
   .header .icon-menu::before {
     background-color: #dad1c2
@@ -2326,9 +2351,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .footer__body:not(:last-child) {
     margin-bottom: 1.25rem
   }
+  .footer__copy-text {
+    left: auto;
+    right: 1.25rem
+  }
   .footer__copy-logo {
     display: flex;
-    justify-content: end
+    justify-content: start;
+    text-align: left
   }
   .hero__image img {
     width: 100%;
@@ -2353,6 +2383,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     row-gap: .9375rem;
     align-items: flex-start
   }
+  .hero__title {
+    margin-right: 0
+  }
   .pros__item {
     row-gap: 1.25rem
   }
@@ -2372,7 +2405,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     margin-bottom: .625rem
   }
   .education__body {
-    flex-direction: column-reverse;
+    flex-direction: column;
     row-gap: 1.875rem
   }
   .education__text {
@@ -2408,11 +2441,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 }
 @media (max-width:29.99875em) {
-  .header .menu__social {
-    -webkit-column-gap: .3125rem;
-    -moz-column-gap: .3125rem;
-    column-gap: .3125rem
-  }
   .footer__copy-text {
     font-size: .75rem
   }
@@ -2493,14 +2521,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       height: calc(5rem + 5 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (font-size:clamp(1rem ,0.92rem + 0.4vw ,1.25rem)) {
+  @supports (font-size:clamp(0.875rem ,0.755rem + 0.6vw ,1.25rem)) {
     .button__link {
-      font-size: clamp(1rem ,.92rem + .4vw ,1.25rem)
+      font-size: clamp(.875rem ,.755rem + .6vw ,1.25rem)
     }
   }
-  @supports not (font-size:clamp(1rem ,0.92rem + 0.4vw ,1.25rem)) {
+  @supports not (font-size:clamp(0.875rem ,0.755rem + 0.6vw ,1.25rem)) {
     .button__link {
-      font-size: calc(1rem + .25 * (100vw - 20rem)/ 62.5)
+      font-size: calc(.875rem + .375 * (100vw - 20rem)/ 62.5)
     }
   }
   @supports (font-size:clamp(0.875rem ,0.835rem + 0.2vw ,1rem)) {
@@ -2563,24 +2591,24 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       font-size: calc(1.125rem + .4375 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (row-gap:clamp(0.625rem ,0.225rem + 2vw ,1.875rem)) {
+  @supports (row-gap:clamp(1.875rem ,1.875rem + 0vw ,1.875rem)) {
     .header .menu__list {
-      row-gap: clamp(.625rem ,.225rem + 2vw ,1.875rem)
+      row-gap: clamp(1.875rem ,1.875rem + 0 ,1.875rem)
     }
   }
-  @supports not (row-gap:clamp(0.625rem ,0.225rem + 2vw ,1.875rem)) {
+  @supports not (row-gap:clamp(1.875rem ,1.875rem + 0vw ,1.875rem)) {
     .header .menu__list {
-      row-gap: calc(.625rem + 1.25 * (100vw - 20rem)/ 62.5)
+      row-gap: calc(1.875rem + 0 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (font-size:clamp(1rem ,0.72rem + 1.4vw ,1.875rem)) {
+  @supports (font-size:clamp(1.25rem ,1.05rem + 1vw ,1.875rem)) {
     .header .menu__link {
-      font-size: clamp(1rem ,.72rem + 1.4vw ,1.875rem)
+      font-size: clamp(1.25rem ,1.05rem + 1vw ,1.875rem)
     }
   }
-  @supports not (font-size:clamp(1rem ,0.72rem + 1.4vw ,1.875rem)) {
+  @supports not (font-size:clamp(1.25rem ,1.05rem + 1vw ,1.875rem)) {
     .header .menu__link {
-      font-size: calc(1rem + .875 * (100vw - 20rem)/ 62.5)
+      font-size: calc(1.25rem + .625 * (100vw - 20rem)/ 62.5)
     }
   }
   @supports (height:clamp(4.375rem ,3.775rem + 3vw ,6.25rem)) {
@@ -2623,14 +2651,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       padding-top: calc(1.875rem + 6.25 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (margin-bottom:clamp(1.875rem ,0.875rem + 5vw ,5rem)) {
+  @supports (margin-bottom:clamp(2.5rem ,1.7rem + 4vw ,5rem)) {
     .footer__stroke:not(:last-child) {
-      margin-bottom: clamp(1.875rem ,.875rem + 5vw ,5rem)
+      margin-bottom: clamp(2.5rem ,1.7rem + 4vw ,5rem)
     }
   }
-  @supports not (margin-bottom:clamp(1.875rem ,0.875rem + 5vw ,5rem)) {
+  @supports not (margin-bottom:clamp(2.5rem ,1.7rem + 4vw ,5rem)) {
     .footer__stroke:not(:last-child) {
-      margin-bottom: calc(1.875rem + 3.125 * (100vw - 20rem)/ 62.5)
+      margin-bottom: calc(2.5rem + 2.5 * (100vw - 20rem)/ 62.5)
     }
   }
   @supports (padding-bottom:clamp(0.625rem ,0.425rem + 1vw ,1.25rem)) {
@@ -2643,28 +2671,38 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       padding-bottom: calc(.625rem + .625 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports ((-moz-column-gap:clamp(1.25rem ,-0.05rem + 6.5vw ,5.3125rem)) or (column-gap:clamp(1.25rem ,-0.05rem + 6.5vw ,5.3125rem))) {
+  @supports ((-moz-column-gap:clamp(2.5rem ,1.6rem + 4.5vw ,5.3125rem)) or (column-gap:clamp(2.5rem ,1.6rem + 4.5vw ,5.3125rem))) {
     .footer__body {
-      -webkit-column-gap: clamp(1.25rem ,-.05rem + 6.5vw ,5.3125rem);
-      -moz-column-gap: clamp(1.25rem ,-.05rem + 6.5vw ,5.3125rem);
-      column-gap: clamp(1.25rem ,-.05rem + 6.5vw ,5.3125rem)
+      -webkit-column-gap: clamp(2.5rem ,1.6rem + 4.5vw ,5.3125rem);
+      -moz-column-gap: clamp(2.5rem ,1.6rem + 4.5vw ,5.3125rem);
+      column-gap: clamp(2.5rem ,1.6rem + 4.5vw ,5.3125rem)
     }
   }
-  @supports not ((-moz-column-gap:clamp(1.25rem ,-0.05rem + 6.5vw ,5.3125rem)) or (column-gap:clamp(1.25rem ,-0.05rem + 6.5vw ,5.3125rem))) {
+  @supports not ((-moz-column-gap:clamp(2.5rem ,1.6rem + 4.5vw ,5.3125rem)) or (column-gap:clamp(2.5rem ,1.6rem + 4.5vw ,5.3125rem))) {
     .footer__body {
-      -webkit-column-gap: calc(1.25rem + 4.0625 * (100vw - 20rem)/ 62.5);
-      -moz-column-gap: calc(1.25rem + 4.0625 * (100vw - 20rem)/ 62.5);
-      column-gap: calc(1.25rem + 4.0625 * (100vw - 20rem)/ 62.5)
+      -webkit-column-gap: calc(2.5rem + 2.8125 * (100vw - 20rem)/ 62.5);
+      -moz-column-gap: calc(2.5rem + 2.8125 * (100vw - 20rem)/ 62.5);
+      column-gap: calc(2.5rem + 2.8125 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (font-size:clamp(1rem ,0.96rem + 0.2vw ,1.125rem)) {
+  @supports (font-size:clamp(1.125rem ,1.085rem + 0.2vw ,1.25rem)) {
     .footer__nav-link {
-      font-size: clamp(1rem ,.96rem + .2vw ,1.125rem)
+      font-size: clamp(1.125rem ,1.085rem + .2vw ,1.25rem)
     }
   }
-  @supports not (font-size:clamp(1rem ,0.96rem + 0.2vw ,1.125rem)) {
+  @supports not (font-size:clamp(1.125rem ,1.085rem + 0.2vw ,1.25rem)) {
     .footer__nav-link {
-      font-size: calc(1rem + .125 * (100vw - 20rem)/ 62.5)
+      font-size: calc(1.125rem + .125 * (100vw - 20rem)/ 62.5)
+    }
+  }
+  @supports (row-gap:clamp(0.5rem ,0.46rem + 0.2vw ,0.625rem)) {
+    .footer__social {
+      row-gap: clamp(.5rem ,.46rem + .2vw ,.625rem)
+    }
+  }
+  @supports not (row-gap:clamp(0.5rem ,0.46rem + 0.2vw ,0.625rem)) {
+    .footer__social {
+      row-gap: calc(.5rem + .125 * (100vw - 20rem)/ 62.5)
     }
   }
   @supports (font-size:clamp(0.875rem ,0.835rem + 0.2vw ,1rem)) {
@@ -2707,24 +2745,24 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       margin-right: calc(3.75rem + 6.875 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (max-width:clamp(18.75rem ,15.15rem + 18vw ,30rem)) {
+  @supports (max-width:clamp(15.625rem ,12.625rem + 15vw ,25rem)) {
     .hero__text {
-      max-width: clamp(18.75rem ,15.15rem + 18vw ,30rem)
+      max-width: clamp(15.625rem ,12.625rem + 15vw ,25rem)
     }
   }
-  @supports not (max-width:clamp(18.75rem ,15.15rem + 18vw ,30rem)) {
+  @supports not (max-width:clamp(15.625rem ,12.625rem + 15vw ,25rem)) {
     .hero__text {
-      max-width: calc(18.75rem + 11.25 * (100vw - 20rem)/ 62.5)
+      max-width: calc(15.625rem + 9.375 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (font-size:clamp(1rem ,0.92rem + 0.4vw ,1.25rem)) {
+  @supports (font-size:clamp(0.875rem ,0.835rem + 0.2vw ,1rem)) {
     .hero__text p {
-      font-size: clamp(1rem ,.92rem + .4vw ,1.25rem)
+      font-size: clamp(.875rem ,.835rem + .2vw ,1rem)
     }
   }
-  @supports not (font-size:clamp(1rem ,0.92rem + 0.4vw ,1.25rem)) {
+  @supports not (font-size:clamp(0.875rem ,0.835rem + 0.2vw ,1rem)) {
     .hero__text p {
-      font-size: calc(1rem + .25 * (100vw - 20rem)/ 62.5)
+      font-size: calc(.875rem + .125 * (100vw - 20rem)/ 62.5)
     }
   }
   @supports (font-size:clamp(1.125rem ,1.085rem + 0.2vw ,1.25rem)) {
@@ -2999,14 +3037,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       font-size: calc(.875rem + .125 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (font-size:clamp(0.875rem ,0.835rem + 0.2vw ,1rem)) {
+  @supports (font-size:clamp(0.75rem ,0.67rem + 0.4vw ,1rem)) {
     .services__descr p {
-      font-size: clamp(.875rem ,.835rem + .2vw ,1rem)
+      font-size: clamp(.75rem ,.67rem + .4vw ,1rem)
     }
   }
-  @supports not (font-size:clamp(0.875rem ,0.835rem + 0.2vw ,1rem)) {
+  @supports not (font-size:clamp(0.75rem ,0.67rem + 0.4vw ,1rem)) {
     .services__descr p {
-      font-size: calc(.875rem + .125 * (100vw - 20rem)/ 62.5)
+      font-size: calc(.75rem + .25 * (100vw - 20rem)/ 62.5)
     }
   }
   @supports (padding-top:clamp(1.5625rem ,1.0625rem + 2.5vw ,3.125rem)) {
