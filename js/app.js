@@ -3694,6 +3694,7 @@
                 modules: [ Navigation, Autoplay ],
                 observer: true,
                 observeParents: true,
+                loop: true,
                 autoHeight: true,
                 speed: 300,
                 autoplay: {
