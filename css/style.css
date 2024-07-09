@@ -354,7 +354,8 @@ html {
   display: flex;
   flex-direction: column;
   align-items: start;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  gap: 1.875rem
 }
 .header .menu__link {
   font-weight: 400;
@@ -404,7 +405,7 @@ html {
   flex-direction: column;
   align-items: flex-start;
   justify-content: end;
-  row-gap: .625rem
+  gap: .625rem
 }
 .header .menu__social-item svg {
   width: 1.5625rem;
@@ -558,20 +559,21 @@ html {
 .hero__wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center
+  max-width: 53%;
+  padding-top: 6.25rem;
+  align-items: flex-end
 }
 .hero__title {
   max-width: 38.4375rem;
   text-align: end;
-  color: #5e554c;
+  color: #2b2928;
   display: inline-block
 }
 .hero__title:not(:last-child) {
   margin-bottom: 1.875rem
 }
 .hero__title span {
-  color: #dad1c2
+  color: rgba(143,133,118,.5)
 }
 .hero__text p {
   font-family: Raleway;
@@ -586,13 +588,18 @@ html {
   transition: all ease .3s
 }
 .hero__link {
-  -webkit-transform: rotate(25deg);
-  transform: rotate(25deg);
   transition: -webkit-transform ease .3s;
   transition: transform ease .3s;
   transition: transform ease .3s,-webkit-transform ease .3s;
   -webkit-animation: pulse 2s infinite alternate;
   animation: pulse 2s infinite alternate
+}
+.hero__link-btn {
+  position: absolute;
+  top: 45%;
+  left: 48%;
+  -webkit-transform: rotate(20deg);
+  transform: rotate(20deg)
 }
 @-webkit-keyframes pulse {
   from {
@@ -1707,9 +1714,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   ._header-scroll .header__logo-text {
     font-size: 1.5625rem
   }
-  .header .menu__list {
-    row-gap: 1.875rem
-  }
   .header .menu__link {
     font-size: 1.875rem
   }
@@ -1721,9 +1725,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .header .menu__social {
     flex-direction: row;
-    -webkit-column-gap: .75rem;
-    -moz-column-gap: .75rem;
-    column-gap: .75rem
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem
   }
   .header .icon-menu {
     margin-top: -1.25rem
@@ -1759,9 +1763,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .hero__title {
     font-size: 5.875rem
-  }
-  .hero__title {
-    margin-right: 10.625rem
   }
   .hero__text {
     max-width: 25rem
@@ -1969,10 +1970,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -o-object-fit: cover;
     object-fit: cover
   }
-  .hero__title {
-    margin-right: 0;
-    margin-left: 5%
-  }
 }
 @media (max-width:1600px) {
   .hero__image img {
@@ -2033,9 +2030,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   ._header-scroll .header__logo-text {
     font-size: 1.125rem
   }
-  .header .menu__list {
-    row-gap: 1.875rem
-  }
   .header .menu__link {
     font-size: 1.25rem
   }
@@ -2076,9 +2070,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .hero__title {
     font-size: 2.1875rem
-  }
-  .hero__title {
-    margin-right: 3.75rem
   }
   .hero__text {
     max-width: 15.625rem
@@ -2366,25 +2357,23 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     object-fit: cover
   }
   .hero__wrapper {
-    align-items: flex-end
+    max-width: 100%;
+    padding-top: 11.25rem
   }
   .hero__title {
-    margin-right: 0;
-    color: #5e554c
-  }
-  .hero__title:not(:last-child) {
-    margin-bottom: 6.25rem
+    color: #dad1c2
   }
   .hero__text p {
     color: #dad1c2
+  }
+  .hero__link-btn {
+    left: auto;
+    right: 1.25rem
   }
   .hero__body {
     flex-direction: column;
     row-gap: .9375rem;
     align-items: flex-start
-  }
-  .hero__title {
-    margin-right: 0
   }
   .pros__item {
     row-gap: 1.25rem
@@ -2591,16 +2580,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       font-size: calc(1.125rem + .4375 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (row-gap:clamp(1.875rem ,1.875rem + 0vw ,1.875rem)) {
-    .header .menu__list {
-      row-gap: clamp(1.875rem ,1.875rem + 0 ,1.875rem)
-    }
-  }
-  @supports not (row-gap:clamp(1.875rem ,1.875rem + 0vw ,1.875rem)) {
-    .header .menu__list {
-      row-gap: calc(1.875rem + 0 * (100vw - 20rem)/ 62.5)
-    }
-  }
   @supports (font-size:clamp(1.25rem ,1.05rem + 1vw ,1.875rem)) {
     .header .menu__link {
       font-size: clamp(1.25rem ,1.05rem + 1vw ,1.875rem)
@@ -2733,16 +2712,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   @supports not (font-size:clamp(2.1875rem ,1.0075rem + 5.9vw ,5.875rem)) {
     .hero__title {
       font-size: calc(2.1875rem + 3.6875 * (100vw - 20rem)/ 62.5)
-    }
-  }
-  @supports (margin-right:clamp(3.75rem ,1.55rem + 11vw ,10.625rem)) {
-    .hero__title {
-      margin-right: clamp(3.75rem ,1.55rem + 11vw ,10.625rem)
-    }
-  }
-  @supports not (margin-right:clamp(3.75rem ,1.55rem + 11vw ,10.625rem)) {
-    .hero__title {
-      margin-right: calc(3.75rem + 6.875 * (100vw - 20rem)/ 62.5)
     }
   }
   @supports (max-width:clamp(15.625rem ,12.625rem + 15vw ,25rem)) {
