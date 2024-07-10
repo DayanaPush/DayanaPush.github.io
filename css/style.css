@@ -405,11 +405,7 @@ html {
   flex-direction: column;
   align-items: flex-start;
   justify-content: end;
-  gap: .625rem
-}
-.header .menu__social-item svg {
-  width: 1.5625rem;
-  height: 1.5625rem
+  gap: .9375rem
 }
 .header .menu__social-link {
   transition: -webkit-transform ease .3s;
@@ -459,11 +455,12 @@ html {
   background-color: #2b2928;
   color: #dad1c2;
   overflow: hidden;
-  position: relative
+  position: relative;
+  will-change: transform
 }
 .footer__marquee {
   display: flex;
-  will-change: transform
+  width: 100%
 }
 .footer__stroke {
   font-weight: 400;
@@ -492,7 +489,7 @@ html {
   justify-content: end
 }
 .footer__nav-item:not(:last-child) {
-  margin-bottom: .9375rem
+  margin-bottom: 1.0625rem
 }
 .footer__nav-link {
   font-family: Raleway;
@@ -508,10 +505,6 @@ html {
   transition: -webkit-transform ease .3s;
   transition: transform ease .3s;
   transition: transform ease .3s,-webkit-transform ease .3s
-}
-.footer__social-item svg {
-  width: 1.5625rem;
-  height: 1.5625rem
 }
 .footer__copy-text {
   font-family: Raleway;
@@ -1753,7 +1746,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 1.25rem
   }
   .footer__social {
-    row-gap: .625rem
+    row-gap: .75rem
   }
   .footer__copy-text {
     font-size: 1rem
@@ -2060,7 +2053,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 1.125rem
   }
   .footer__social {
-    row-gap: .5rem
+    row-gap: .625rem
   }
   .footer__copy-text {
     font-size: .875rem
@@ -2674,14 +2667,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       font-size: calc(1.125rem + .125 * (100vw - 20rem)/ 62.5)
     }
   }
-  @supports (row-gap:clamp(0.5rem ,0.46rem + 0.2vw ,0.625rem)) {
+  @supports (row-gap:clamp(0.625rem ,0.585rem + 0.2vw ,0.75rem)) {
     .footer__social {
-      row-gap: clamp(.5rem ,.46rem + .2vw ,.625rem)
+      row-gap: clamp(.625rem ,.585rem + .2vw ,.75rem)
     }
   }
-  @supports not (row-gap:clamp(0.5rem ,0.46rem + 0.2vw ,0.625rem)) {
+  @supports not (row-gap:clamp(0.625rem ,0.585rem + 0.2vw ,0.75rem)) {
     .footer__social {
-      row-gap: calc(.5rem + .125 * (100vw - 20rem)/ 62.5)
+      row-gap: calc(.625rem + .125 * (100vw - 20rem)/ 62.5)
     }
   }
   @supports (font-size:clamp(0.875rem ,0.835rem + 0.2vw ,1rem)) {
