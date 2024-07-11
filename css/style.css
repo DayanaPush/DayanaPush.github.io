@@ -156,7 +156,9 @@ html {
 }
 .button__dark {
   background-color: #2b2928;
-  transition: all ease .5s;
+  transition: background-color .5s ease,color .5s ease,-webkit-transform .5s ease;
+  transition: background-color .5s ease,color .5s ease,transform .5s ease;
+  transition: background-color .5s ease,color .5s ease,transform .5s ease,-webkit-transform .5s ease;
   -webkit-animation: rotate360 2.5s infinite;
   animation: rotate360 2.5s infinite
 }
@@ -543,7 +545,11 @@ html {
 }
 .footer__marquee {
   display: flex;
-  width: 100%
+  width: 100%;
+  white-space: nowrap;
+  transition: -webkit-transform .1s linear;
+  transition: transform .1s linear;
+  transition: transform .1s linear,-webkit-transform .1s linear
 }
 .footer__stroke {
   font-weight: 400;
@@ -560,7 +566,9 @@ html {
   z-index: 5;
   padding: .625rem;
   text-align: center;
-  transition: all ease .3s
+  transition: background-color .3s ease,-webkit-transform .3s ease;
+  transition: background-color .3s ease,transform .3s ease;
+  transition: background-color .3s ease,transform .3s ease,-webkit-transform .3s ease
 }
 .footer__container {
   position: relative
@@ -677,10 +685,14 @@ html {
   font-weight: 600;
   text-decoration: underline;
   color: #dad1c2;
-  transition: all ease .3s
+  transition: color .3s ease,-webkit-text-decoration .3s ease;
+  transition: color .3s ease,text-decoration .3s ease;
+  transition: color .3s ease,text-decoration .3s ease,-webkit-text-decoration .3s ease
 }
 .hero__link {
-  transition: all ease .3s;
+  transition: background-color .3s ease,-webkit-transform .3s ease;
+  transition: background-color .3s ease,transform .3s ease;
+  transition: background-color .3s ease,transform .3s ease,-webkit-transform .3s ease;
   -webkit-animation: pulse 2s infinite alternate;
   animation: pulse 2s infinite alternate
 }
@@ -1106,7 +1118,9 @@ html {
   padding: .625rem;
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
-  transition: all ease .3s
+  transition: background-color .3s ease,-webkit-transform .3s ease;
+  transition: background-color .3s ease,transform .3s ease;
+  transition: background-color .3s ease,transform .3s ease,-webkit-transform .3s ease
 }
 .faq__spollers {
   display: flex;
@@ -2428,6 +2442,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .footer__body:not(:last-child) {
     margin-bottom: 1.25rem
+  }
+  .footer__nav-item:not(:last-child) {
+    margin-bottom: 1.125rem
   }
   .footer__copy-text {
     left: auto;

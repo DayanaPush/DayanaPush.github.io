@@ -3751,7 +3751,6 @@
                 observeParents: true,
                 slidesPerView: 1,
                 loop: true,
-                autoHeight: true,
                 speed: 300,
                 autoplay: {
                     delay: 3e3,
@@ -5724,26 +5723,25 @@ PERFORMANCE OF THIS SOFTWARE.
             marqueeContainer.appendChild(clone);
         }));
         let scrollPosition = 0;
-        let lastTimestamp = null;
         const frameOffset = 60 / animationSpeed;
+        let lastTimestamp = performance.now();
         function moveMarquee(timestamp) {
-            if (!lastTimestamp) lastTimestamp = timestamp;
             const deltaTime = timestamp - lastTimestamp;
-            if (deltaTime > frameOffset) {
+            if (deltaTime >= frameOffset) {
                 scrollPosition -= 1 * animationSpeed;
-                marqueeContainer.style.transform = `translateX(${scrollPosition}px)`;
+                marqueeContainer.style.transform = `translate3d(${scrollPosition}px, 0, 0)`;
                 const firstElement = marqueeContainer.firstElementChild;
                 const rect = firstElement.getBoundingClientRect();
                 if (rect.right < 0) {
                     marqueeContainer.appendChild(firstElement);
                     scrollPosition += firstElement.offsetWidth + 30;
-                    marqueeContainer.style.transform = `translateX(${scrollPosition}px)`;
+                    marqueeContainer.style.transform = `translate3d(${scrollPosition}px, 0, 0)`;
                 }
                 lastTimestamp = timestamp;
             }
             requestAnimationFrame(moveMarquee);
         }
-        moveMarquee();
+        requestAnimationFrame(moveMarquee);
     }
     const animate = () => {
         const elementsToAnimate = document.querySelectorAll("[data-animate]");
@@ -5793,7 +5791,7 @@ PERFORMANCE OF THIS SOFTWARE.
     }
     window.addEventListener("scroll", toggleScrollUp);
     scrollUp.addEventListener("click", scrollToTop);
-    window["FLS"] = true;
+    window["FLS"] = false;
     addLoadedClass();
     menuInit();
     spollers();
