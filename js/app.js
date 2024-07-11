@@ -5781,6 +5781,18 @@ PERFORMANCE OF THIS SOFTWARE.
         }));
     };
     const modules_animate = animate;
+    const scrollUp = document.querySelector(".scroll-up");
+    function toggleScrollUp() {
+        scrollUp.classList.toggle("active", window.scrollY > 1500);
+    }
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+    window.addEventListener("scroll", toggleScrollUp);
+    scrollUp.addEventListener("click", scrollToTop);
     window["FLS"] = true;
     addLoadedClass();
     menuInit();
