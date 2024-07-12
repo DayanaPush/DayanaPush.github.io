@@ -5723,25 +5723,26 @@ PERFORMANCE OF THIS SOFTWARE.
             marqueeContainer.appendChild(clone);
         }));
         let scrollPosition = 0;
+        let lastTimestamp = null;
         const frameOffset = 60 / animationSpeed;
-        let lastTimestamp = performance.now();
         function moveMarquee(timestamp) {
+            if (!lastTimestamp) lastTimestamp = timestamp;
             const deltaTime = timestamp - lastTimestamp;
-            if (deltaTime >= frameOffset) {
+            if (deltaTime > frameOffset) {
                 scrollPosition -= 1 * animationSpeed;
-                marqueeContainer.style.transform = `translate3d(${scrollPosition}px, 0, 0)`;
+                marqueeContainer.style.transform = `translateX(${scrollPosition}px)`;
                 const firstElement = marqueeContainer.firstElementChild;
                 const rect = firstElement.getBoundingClientRect();
                 if (rect.right < 0) {
                     marqueeContainer.appendChild(firstElement);
                     scrollPosition += firstElement.offsetWidth + 30;
-                    marqueeContainer.style.transform = `translate3d(${scrollPosition}px, 0, 0)`;
+                    marqueeContainer.style.transform = `translateX(${scrollPosition}px)`;
                 }
                 lastTimestamp = timestamp;
             }
             requestAnimationFrame(moveMarquee);
         }
-        requestAnimationFrame(moveMarquee);
+        moveMarquee();
     }
     const animate = () => {
         const elementsToAnimate = document.querySelectorAll("[data-animate]");
