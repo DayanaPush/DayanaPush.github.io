@@ -347,6 +347,7 @@ html {
 .form__title span,
 .hero__text span,
 .portfolio__item-type span,
+.privacy__text span,
 .pros__title span,
 .services__descr span {
   display: inline-block;
@@ -1274,7 +1275,8 @@ html {
   line-height: 1;
   display: inline-block;
   margin: 0 auto;
-  transition: color ease .3s,background-color ease .3s
+  transition: color ease .3s,background-color ease .3s;
+  font-family: Raleway
 }
 .privacy__page {
   background-color: #5e554c
