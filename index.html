@@ -12,7 +12,7 @@
 	<meta property="og:image" content="img/meta/01.webp">
 	<!-- <meta name="format-detection" content="telephone=no"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240712154350">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240718154115">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.webp">
 	<link rel="android-chrome" sizes="512x512" href="../android-chrome-512x512.webp">
@@ -372,13 +372,13 @@
 					</div>
 				</div>
 			</section>
-			<section class="form">
+			<section class="form" id="form">
 				<div class="form__image">
 					<img src="img/form/01.webp" alt="My photo">
 				</div>
 				<div class="form__container">
 					<h2 data-animate data-speed="100" class="form__title">ДЛЯ СПІВПРАЦІ</h2>
-					<form action="#" method="POST" class="form__wrapper">
+					<form action="files/sendmail/sendmail.php" method="POST" class="form__wrapper">
 						<div class="form__inputs">
 							<div class="form__input">
 								<input required name="name" id="name" type="text" placeholder="Імʼя" autocomplete="off">
@@ -388,7 +388,13 @@
 							</div>
 						</div>
 						<div class="form__textarea">
-							<textarea name="text" id="text" placeholder="Повідомлення (Ваш запит або питання)"></textarea>
+							<textarea required name="text" id="text" placeholder="Повідомлення (Ваш запит або питання)"></textarea>
+						</div>
+						<div class="form__checkbox">
+							<input type="checkbox" id="agreeCheckbox" required>
+							<a href="privacy.html" target="_blank" class="form__privacy-link">
+								<label>Я погоджуюсь з політикою конфіденційності</label>
+							</a>
 						</div>
 						<div class="form__btn">
 							<button type="submit" class="form__button button button__link">надіслати запит</button>
@@ -433,9 +439,9 @@
 				<div class="footer__stroke">ЗАМОВИТИ САЙТ ДЛЯ ВАШОГО ПРОДУКТУ</div>
 			</div>
 
-			<div class="footer__button button">
-				<a href="#" class="button__link">надіслати запит</a>
-			</div>
+			<!-- <div class="footer__button button"> -->
+			<a href="#form" class="button__link footer__button button">надіслати запит</a>
+			<!-- </div> -->
 
 			<div class="footer__container">
 				<div class="footer__body">
@@ -494,7 +500,68 @@
 			<img src="img/icons/up.svg" alt="Scroll Up">
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240712154350"></script>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
+					<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
+				</svg>
+			</button>
+			<div class="popup__text">
+				Popup content
+			</div>
+		</div>
+	</div>
+</div> -->
+
+	<!-- <div class='popup' data-modal>
+	<div class='popup__content'>
+		<button data-close class='popup__close'>&times;</button>
+		<h4 class="popup__title">Fuel your brand`s aims with <br> <span>Liakhovych product</span></h4>
+		<h5 class="popup__subtitle">We will contact you in 24 hours to explain how we can help your brand achieve your prior goals thanks to effective digital presence.</h5>
+		<div class='popup__body'>
+			<form class='popup__form' action="files/sendmail/sendmail.php" method="POST">
+				<div class="popup__input">
+					<input required name="name" id="name" type="text" placeholder="Name" autocomplete="off">
+				</div>
+				<div class="popup__input">
+					<input required name="email" id="email" type="email" placeholder="Email" autocomplete="off">
+				</div>
+				<div class="popup__textarea">
+					<textarea name="text" id="text" placeholder="Message..."></textarea>
+				</div>
+				<button data-ripple class="button popup__button">Send a Message</button>
+			</form>
+		</div>
+	</div>
+</div> -->
+
+	<div class="popup__submit">
+		<div class="popup__submit-content">
+			<div class="popup__submit-text">
+				<p>Дякую за зацікавленість у співпраці зі мною!</p>
+			</div>
+			<div class="popup__submit-answer">
+				<p>Ви отримаєте відповідь протягом декількох годин.
+					Чекатиму на початок роботи над спільним проектом!</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup__submit popup__error">
+		<div class="popup__submit-content">
+			<div class="popup__submit-text">
+				<p>Ууууупс...</p>
+			</div>
+			<div class="popup__submit-answer">
+				<p>Щось пішло не за планом.<br>
+					Проблему буде вірішено якомога скоріше.</p>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240718154115"></script>
 </body>
 
 </html>

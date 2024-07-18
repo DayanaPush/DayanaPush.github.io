@@ -12,7 +12,7 @@
 	<meta property="og:image" content="img/meta/02.webp">
 	<!-- <meta name="format-detection" content="telephone=no"> -->
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240712154350">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240718154115">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.webp">
 	<link rel="android-chrome" sizes="512x512" href="../android-chrome-512x512.webp">
@@ -380,13 +380,13 @@
 					</div>
 				</div>
 			</section>
-			<section class="form">
+			<section class="form" id="form">
 				<div class="form__image">
 					<img src="img/form/01.webp" alt="My photo">
 				</div>
 				<div class="form__container">
 					<h2 data-animate data-speed="100" class="form__title">LET'S COLLABORATE</h2>
-					<form action="#" method="POST" class="form__wrapper">
+					<form action="files/sendmail/sendmail.php" method="POST" class="form__wrapper">
 						<div class="form__inputs">
 							<div class="form__input">
 								<input required name="name" id="name" type="text" placeholder="Name" autocomplete="off">
@@ -396,7 +396,13 @@
 							</div>
 						</div>
 						<div class="form__textarea">
-							<textarea name="text" id="text" placeholder="Message (your request or question)"></textarea>
+							<textarea required name="text" id="text" placeholder="Message (your request or question)"></textarea>
+						</div>
+						<div class="form__checkbox">
+							<input type="checkbox" id="agreeCheckbox" required>
+							<a href="privacy-en.html" target="_blank" class="form__privacy-link">
+								<label>I agree with the terms of privacy & policy</label>
+							</a>
 						</div>
 						<div class="form__btn">
 							<button type="submit" class="form__button button button__link">start a project</button>
@@ -440,9 +446,9 @@
 			<div class="footer__marquee">
 				<div class="footer__stroke">ORDER WEB DESIGN FOR MY PRODUCT</div>
 			</div>
-			<div class="footer__button button">
-				<a href="#" class="button__link">start a project</a>
-			</div>
+			<!-- <div class="footer__button button"> -->
+			<a href="#form" class="button__link footer__button button">start a project</a>
+			<!-- </div> -->
 
 			<div class="footer__container">
 				<div class="footer__body">
@@ -503,7 +509,7 @@
 			<img src="img/icons/up.svg" alt="Scroll Up">
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240712154350"></script>
+	<script src="js/app.min.js?_v=20240718154115"></script>
 </body>
 
 </html>

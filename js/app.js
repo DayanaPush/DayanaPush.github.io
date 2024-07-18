@@ -5792,6 +5792,53 @@ PERFORMANCE OF THIS SOFTWARE.
     }
     window.addEventListener("scroll", toggleScrollUp);
     scrollUp.addEventListener("click", scrollToTop);
+    function form_form() {
+        const forms = document.forms;
+        if (forms.length) for (const form of forms) form.addEventListener("submit", formSubmitAction);
+        async function formSubmitAction(e) {
+            e.preventDefault();
+            const form = e.target;
+            if (!validateForm(form)) return;
+            const formAction = form.getAttribute("action") ? form.getAttribute("action").trim() : "#";
+            const formMethod = form.getAttribute("method") ? form.getAttribute("method").trim() : "GET";
+            const formData = new FormData(form);
+            form.classList.add("form-sending");
+            try {
+                const response = await fetch(formAction, {
+                    method: formMethod,
+                    body: formData
+                });
+                form.classList.remove("form-sending");
+                if (response.ok) showPopup(".popup__submit"); else showPopup(".popup__error");
+                form.reset();
+            } catch (error) {
+                form.classList.remove("form-sending");
+                showPopup(".popup__error");
+                form.reset();
+            }
+        }
+        function validateForm(form) {
+            const emailField = form.querySelector('input[name="email"]');
+            const textField = form.querySelector('textarea[name="text"]');
+            const nameField = form.querySelector('input[name="name"]');
+            const emailValid = emailField.value.trim() !== "" && emailField.checkValidity();
+            const textValid = textField.value.trim() !== "";
+            const nameValid = nameField.value.trim() !== "";
+            return emailValid && textValid && nameValid;
+        }
+        function showPopup(selector) {
+            const popup = document.querySelector(selector);
+            if (popup) {
+                popup.style.display = "block";
+                document.body.style.overflow = "hidden";
+                setTimeout((() => {
+                    popup.style.display = "none";
+                    document.body.style.overflow = "";
+                }), 3e3);
+            }
+        }
+    }
+    const modules_form = form_form;
     window["FLS"] = false;
     addLoadedClass();
     menuInit();
@@ -5802,5 +5849,6 @@ PERFORMANCE OF THIS SOFTWARE.
         "use strict";
         initMarquee(3);
         modules_animate();
+        modules_form();
     }));
 })();

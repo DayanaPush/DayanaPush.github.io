@@ -60,7 +60,7 @@ html {
   min-width: 320px
 }
 body {
-  color: #2b2928;
+  color: #2b2a29;
   line-height: 1;
   font-family: "Kharkiv Tone";
   font-size: .875rem;
@@ -155,7 +155,7 @@ html {
   cursor: pointer
 }
 .button__dark {
-  background-color: #2b2928;
+  background-color: #2b2a29;
   transition: background-color .5s ease,color .5s ease,-webkit-transform .5s ease;
   transition: background-color .5s ease,color .5s ease,transform .5s ease;
   transition: background-color .5s ease,color .5s ease,transform .5s ease,-webkit-transform .5s ease;
@@ -269,7 +269,7 @@ html {
   text-align: right
 }
 .block__title span {
-  color: #2b2928;
+  color: #2b2a29;
   display: flex;
   justify-content: end
 }
@@ -452,7 +452,7 @@ html {
   right: -110%
 }
 .menu-open .header .menu__icon-text {
-  color: #2b2928
+  color: #2b2a29
 }
 .header .menu__body {
   display: grid;
@@ -510,7 +510,7 @@ html {
   left: 0;
   position: absolute;
   height: .125rem;
-  background-color: #2b2928;
+  background-color: #2b2a29;
   top: 0;
   width: 100%
 }
@@ -518,7 +518,7 @@ html {
   display: block;
   height: .125rem;
   width: 100%;
-  background-color: #2b2928
+  background-color: #2b2a29
 }
 .menu-open .header .icon-menu-span {
   -webkit-transform: rotate(45deg);
@@ -526,7 +526,7 @@ html {
   width: 70%;
   position: relative;
   z-index: 5;
-  background-color: #2b2928
+  background-color: #2b2a29
 }
 .menu-open .header .icon-menu::before {
   top: calc(50% - .0625rem);
@@ -534,10 +534,10 @@ html {
   transform: rotate(-45deg);
   z-index: 5;
   width: 70%;
-  background-color: #2b2928
+  background-color: #2b2a29
 }
 .footer {
-  background-color: #2b2928;
+  background-color: #2b2a29;
   color: #dad1c2;
   overflow: hidden;
   position: relative;
@@ -662,7 +662,7 @@ html {
 .hero__title {
   max-width: 38.4375rem;
   text-align: end;
-  color: #2b2928;
+  color: #2b2a29;
   display: inline-block
 }
 .hero__title:not(:last-child) {
@@ -781,7 +781,7 @@ html {
   height: 100%
 }
 .pros__title {
-  color: #2b2928;
+  color: #2b2a29;
   text-align: right
 }
 .pros__wrapper {
@@ -880,7 +880,7 @@ html {
   color: rgba(143,133,118,.5)
 }
 .services__text-dark {
-  color: #2b2928
+  color: #2b2a29
 }
 .services__text-pink {
   color: #e8114d
@@ -914,7 +914,7 @@ html {
   color: rgba(143,133,118,.5)
 }
 .education__text-dark {
-  color: #2b2928
+  color: #2b2a29
 }
 .education__text-pink {
   color: #e8114d;
@@ -1014,7 +1014,7 @@ html {
 }
 .form {
   display: flex;
-  background-color: #2b2928
+  background-color: #2b2a29
 }
 .form__image {
   max-width: 33.125rem;
@@ -1106,6 +1106,24 @@ html {
   font-weight: 300;
   color: #dfdfdf
 }
+.form__checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem
+}
+.form__checkbox:not(:last-child) {
+  margin-bottom: 2.5rem
+}
+.form__checkbox label {
+  color: #dfdfdf;
+  text-decoration: underline;
+  transition: color ease .3s
+}
+.form__checkbox input {
+  width: 1.25rem;
+  height: 1.25rem
+}
 .form__btn {
   display: flex;
   justify-content: end
@@ -1153,7 +1171,7 @@ html {
   color: #e8114d
 }
 .faq__spollers-title._spoller-active span {
-  color: #2b2928
+  color: #2b2a29
 }
 .faq__spollers-title::after {
   content: "";
@@ -1187,6 +1205,79 @@ html {
 }
 .faq__spollers-item summary::-webkit-details-marker {
   display: none
+}
+.popup__submit {
+  z-index: 2000;
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43,41,40,.9)
+}
+.popup__submit-content {
+  position: fixed;
+  padding: 3.125rem;
+  max-width: 50rem;
+  left: 50%;
+  top: 10%;
+  background-color: #dad1c2;
+  text-align: center;
+  -webkit-transform: translateX(-50%)!important;
+  transform: translateX(-50%)!important;
+  border-radius: .625rem
+}
+.popup__submit-text p {
+  font-weight: 400;
+  line-height: 1.1
+}
+.popup__submit-answer p {
+  font-family: Raleway;
+  font-weight: 200;
+  line-height: 1.1
+}
+.privacy {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.privacy__container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 9.375rem;
+  padding-bottom: 9.375rem
+}
+.privacy__text {
+  max-width: 43.75rem;
+  background-color: #dad1c2;
+  border-radius: 1.25rem
+}
+.privacy__text p {
+  line-height: 1.2;
+  color: #2b2a29;
+  text-align: center;
+  font-family: Raleway
+}
+.privacy__button {
+  background-color: #2b2a29;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  color: #dad1c2;
+  line-height: 1;
+  display: inline-block;
+  margin: 0 auto;
+  transition: color ease .3s,background-color ease .3s
+}
+.privacy__page {
+  background-color: #5e554c
 }
 .swiper {
   overflow: hidden
@@ -1806,7 +1897,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 1.875rem
   }
   .menu-open .header__logo-text {
-    color: #2b2928
+    color: #2b2a29
   }
   ._header-scroll .header__logo-text {
     font-size: 1.5625rem
@@ -2050,6 +2141,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .form__textarea textarea::placeholder {
     font-size: 1.375rem
   }
+  .form__checkbox label {
+    font-size: .75rem
+  }
+  .form__btn {
+    padding-bottom: 3.125rem
+  }
   .faq {
     padding-top: 6.25rem
   }
@@ -2066,6 +2163,27 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 2rem
   }
   .faq__spollers-body {
+    font-size: 1.25rem
+  }
+  .popup__submit-text:not(:last-child) {
+    margin-bottom: 1.25rem
+  }
+  .popup__submit-text p {
+    font-size: 3.125rem
+  }
+  .popup__submit-answer p {
+    font-size: 1rem
+  }
+  .privacy__text {
+    padding: 3.125rem
+  }
+  .privacy__text:not(:last-child) {
+    margin-bottom: 3.125rem
+  }
+  .privacy__text p {
+    font-size: 1.5625rem
+  }
+  .privacy__button {
     font-size: 1.25rem
   }
 }
@@ -2353,6 +2471,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .form__textarea textarea::placeholder {
     font-size: .875rem
   }
+  .form__checkbox label {
+    font-size: .625rem
+  }
+  .form__btn {
+    padding-bottom: 1.5625rem
+  }
   .faq {
     padding-top: .625rem
   }
@@ -2369,6 +2493,27 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     font-size: 1.125rem
   }
   .faq__spollers-body {
+    font-size: 1rem
+  }
+  .popup__submit-text:not(:last-child) {
+    margin-bottom: .625rem
+  }
+  .popup__submit-text p {
+    font-size: 1.375rem
+  }
+  .popup__submit-answer p {
+    font-size: .875rem
+  }
+  .privacy__text {
+    padding: 1.25rem
+  }
+  .privacy__text:not(:last-child) {
+    margin-bottom: 1.5625rem
+  }
+  .privacy__text p {
+    font-size: 1.125rem
+  }
+  .privacy__button {
     font-size: 1rem
   }
 }
@@ -2418,7 +2563,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     color: #dad1c2
   }
   .menu-open .header__logo-text {
-    color: #2b2928
+    color: #2b2a29
   }
   .header .menu__icon-text {
     color: #dad1c2
@@ -2538,6 +2683,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .form__textarea:not(:last-child) {
     margin-bottom: 2.5rem
+  }
+  .popup__submit-content {
+    padding: .9375rem;
+    width: 80%
   }
 }
 @media (max-width:47.99875em) and (max-width:20em) {
@@ -3378,6 +3527,26 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       font-size: calc(.875rem + .5 * (100vw - 20rem)/ 62.5)
     }
   }
+  @supports (font-size:clamp(0.625rem ,0.585rem + 0.2vw ,0.75rem)) {
+    .form__checkbox label {
+      font-size: clamp(.625rem ,.585rem + .2vw ,.75rem)
+    }
+  }
+  @supports not (font-size:clamp(0.625rem ,0.585rem + 0.2vw ,0.75rem)) {
+    .form__checkbox label {
+      font-size: calc(.625rem + .125 * (100vw - 20rem)/ 62.5)
+    }
+  }
+  @supports (padding-bottom:clamp(1.5625rem ,1.0625rem + 2.5vw ,3.125rem)) {
+    .form__btn {
+      padding-bottom: clamp(1.5625rem ,1.0625rem + 2.5vw ,3.125rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(1.5625rem ,1.0625rem + 2.5vw ,3.125rem)) {
+    .form__btn {
+      padding-bottom: calc(1.5625rem + 1.5625 * (100vw - 20rem)/ 62.5)
+    }
+  }
   @supports (padding-top:clamp(0.625rem ,-1.175rem + 9vw ,6.25rem)) {
     .faq {
       padding-top: clamp(.625rem ,-1.175rem + 9vw ,6.25rem)
@@ -3438,6 +3607,76 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
       font-size: calc(1rem + .25 * (100vw - 20rem)/ 62.5)
     }
   }
+  @supports (margin-bottom:clamp(0.625rem ,0.425rem + 1vw ,1.25rem)) {
+    .popup__submit-text:not(:last-child) {
+      margin-bottom: clamp(.625rem ,.425rem + 1vw ,1.25rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(0.625rem ,0.425rem + 1vw ,1.25rem)) {
+    .popup__submit-text:not(:last-child) {
+      margin-bottom: calc(.625rem + .625 * (100vw - 20rem)/ 62.5)
+    }
+  }
+  @supports (font-size:clamp(1.375rem ,0.815rem + 2.8vw ,3.125rem)) {
+    .popup__submit-text p {
+      font-size: clamp(1.375rem ,.815rem + 2.8vw ,3.125rem)
+    }
+  }
+  @supports not (font-size:clamp(1.375rem ,0.815rem + 2.8vw ,3.125rem)) {
+    .popup__submit-text p {
+      font-size: calc(1.375rem + 1.75 * (100vw - 20rem)/ 62.5)
+    }
+  }
+  @supports (font-size:clamp(0.875rem ,0.835rem + 0.2vw ,1rem)) {
+    .popup__submit-answer p {
+      font-size: clamp(.875rem ,.835rem + .2vw ,1rem)
+    }
+  }
+  @supports not (font-size:clamp(0.875rem ,0.835rem + 0.2vw ,1rem)) {
+    .popup__submit-answer p {
+      font-size: calc(.875rem + .125 * (100vw - 20rem)/ 62.5)
+    }
+  }
+  @supports (padding:clamp(1.25rem ,0.65rem + 3vw ,3.125rem)) {
+    .privacy__text {
+      padding: clamp(1.25rem ,.65rem + 3vw ,3.125rem)
+    }
+  }
+  @supports not (padding:clamp(1.25rem ,0.65rem + 3vw ,3.125rem)) {
+    .privacy__text {
+      padding: calc(1.25rem + 1.875 * (100vw - 20rem)/ 62.5)
+    }
+  }
+  @supports (margin-bottom:clamp(1.5625rem ,1.0625rem + 2.5vw ,3.125rem)) {
+    .privacy__text:not(:last-child) {
+      margin-bottom: clamp(1.5625rem ,1.0625rem + 2.5vw ,3.125rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(1.5625rem ,1.0625rem + 2.5vw ,3.125rem)) {
+    .privacy__text:not(:last-child) {
+      margin-bottom: calc(1.5625rem + 1.5625 * (100vw - 20rem)/ 62.5)
+    }
+  }
+  @supports (font-size:clamp(1.125rem ,0.985rem + 0.7vw ,1.5625rem)) {
+    .privacy__text p {
+      font-size: clamp(1.125rem ,.985rem + .7vw ,1.5625rem)
+    }
+  }
+  @supports not (font-size:clamp(1.125rem ,0.985rem + 0.7vw ,1.5625rem)) {
+    .privacy__text p {
+      font-size: calc(1.125rem + .4375 * (100vw - 20rem)/ 62.5)
+    }
+  }
+  @supports (font-size:clamp(1rem ,0.92rem + 0.4vw ,1.25rem)) {
+    .privacy__button {
+      font-size: clamp(1rem ,.92rem + .4vw ,1.25rem)
+    }
+  }
+  @supports not (font-size:clamp(1rem ,0.92rem + 0.4vw ,1.25rem)) {
+    .privacy__button {
+      font-size: calc(1rem + .25 * (100vw - 20rem)/ 62.5)
+    }
+  }
 }
 @media (max-width:47.99875em) and (min-width:82.5em) {
   .footer__copy-logo {
@@ -3464,7 +3703,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-transform: scale(.9);
     transform: scale(.9);
     background-color: #dfdfdf;
-    color: #2b2928
+    color: #2b2a29
   }
   .footer__nav-link:hover,
   .hero__button:hover,
@@ -3510,12 +3749,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-animation-play-state: paused;
     animation-play-state: paused
   }
+  .form__checkbox label:hover {
+    color: #e8114d
+  }
   .form__button:hover {
     -webkit-transform: rotate(0);
     transform: rotate(0)
   }
   .faq__spollers-title:hover::before {
     width: 10%
+  }
+  .privacy__button:hover {
+    background-color: #dad1c2;
+    color: #2b2a29
   }
 }
 @media (any-hover:none) {
