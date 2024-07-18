@@ -5834,7 +5834,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 setTimeout((() => {
                     popup.style.display = "none";
                     document.body.style.overflow = "";
-                }), 3e3);
+                }), 3500);
             }
         }
     }
